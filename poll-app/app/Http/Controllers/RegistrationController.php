@@ -24,5 +24,3 @@ class RegistrationController extends Controller
         return back()->with('message', 'User registered succesfully!');
     }
 }
-
-// App\Models\User::create(['name' => 'Henrik', 'email' => 'henrik@yrgo.se', 'password' => Hash::make('123')]);
