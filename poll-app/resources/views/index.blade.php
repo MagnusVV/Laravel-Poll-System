@@ -14,7 +14,6 @@
     <button type="submit">Login</button>
 </form>
 
-@include('errors')
 
 <h2>Add new user</h2>
 <form method="post" action="/add-user">
