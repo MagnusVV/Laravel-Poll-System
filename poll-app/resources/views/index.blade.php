@@ -17,7 +17,7 @@
 @include('errors')
 
 <h2>Add new user</h2>
-<form method="post" action="/adduser">
+<form method="post" action="/add-user">
 
     @csrf
 

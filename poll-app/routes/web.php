@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LogoutController;
+use App\Http\Controllers\RegistrationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,3 +27,5 @@ Route::post('polls', CreatePollController::class);
 Route::get('dashboard', DashboardController::class)->middleware('auth');
 
 Route::get('logout', LogoutController::class);
+
+Route::post('add-user', RegistrationController::class);
