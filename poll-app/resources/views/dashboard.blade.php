@@ -25,4 +25,15 @@
     <button type="submit">Add Poll</button>
 </form>
 
+<div class="created_poll">
+    @foreach ($user->polls as $poll)
+        @if (!$poll->poll_closed)
+            <h1>{{$poll->poll_title}}</h1>
+            <p><b>Poll Description:</b> {{$poll->poll_description}}</p>
+            <p><b>Date Closing:</b> {{$poll->date_closing}}</p>
+            <p><b>Number Of Allowed Votes: </b>{{$poll->no_of_allowed_votes}}</p>
+        @endif
+    @endforeach
+</div>
+
 @include('errors')
