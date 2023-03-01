@@ -2,6 +2,8 @@
 
 <a href="/logout">Log out {{$user->user_name}}</a>
 
+<br></br>
+
 <form method="post" action="/polls">
 
     @csrf
