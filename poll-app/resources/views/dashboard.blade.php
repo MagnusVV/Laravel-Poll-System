@@ -29,7 +29,7 @@
 
 <div>
 
-    @foreach ($polls as $poll)
+    @foreach ($user->polls as $poll)
         @if (!$poll->poll_closed)
             <h1>{{$poll->poll_title}}</h1>
             <p><b>Created By: {{$users->find($poll->user_id)->user_name}}</b></p>

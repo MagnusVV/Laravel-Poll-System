@@ -16,6 +16,6 @@ class DashboardController extends Controller
      */
     public function __invoke(Request $request)
     {
-        return view('dashboard', ['user' => $request->user()], ['polls' => Poll::all(), 'users' => User::all()]);
+        return view('dashboard', ['user' => $request->user()], ['polls' => Poll::all(), 'users' => User::all(['id', 'user_name'])]);
     }
 }
