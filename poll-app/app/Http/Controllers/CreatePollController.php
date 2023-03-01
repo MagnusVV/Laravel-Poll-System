@@ -26,6 +26,7 @@ class CreatePollController extends Controller
         $poll['user_id'] = Auth::id();
 
         Poll::create($poll);
+
         return Redirect::to('dashboard');
     }
 }

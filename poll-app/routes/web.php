@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ClosePollController;
 use App\Http\Controllers\CreatePollController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
@@ -29,3 +30,5 @@ Route::get('dashboard', DashboardController::class)->middleware('auth');
 Route::get('logout', LogoutController::class);
 
 Route::post('add-user', RegistrationController::class);
+
+Route::patch('polls/{poll}/closed', ClosePollController::class)->middleware('auth');
