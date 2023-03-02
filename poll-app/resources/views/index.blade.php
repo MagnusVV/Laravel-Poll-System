@@ -50,12 +50,19 @@
     <p><b>Poll Description:</b> {{$poll->poll_description}}</p>
     <p><b>Date Closing:</b> {{$poll->date_closing}}</p>
     <p><b>Number Of Allowed Votes: </b>{{$poll->no_of_allowed_votes}}</p>
-    <form action="polls/{{$poll->id}}/closed" method="post">
 
+    <form action="/vote" method="post">
         @csrf
-        @method('PATCH')
+        <label for="first-option">Option 1: </label>
+        <input type="text" id="first-option" value={{"1"}} readonly>
+        <button type="submit" name="first-option">Vote!</button>
+    </form>
 
-        {{-- <button type="submit">Close Poll</button> --}}
+    <form action="/vote" method="post">
+        @csrf
+        <label for="second-option">Option 2: </label>
+        <input type="text" id="first-option" value="2" readonly>
+        <button type="submit" name="first-option">Vote!</button>
     </form>
 @endif
 @endforeach
