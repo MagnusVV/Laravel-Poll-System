@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Poll;
+use App\Models\VoteOption;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
@@ -27,6 +28,6 @@ class CreatePollController extends Controller
 
         Poll::create($poll);
 
-        return Redirect::to('dashboard');
+        return redirect('dashboard');
     }
 }

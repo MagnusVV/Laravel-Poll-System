@@ -8,6 +8,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\RegistrationController;
 use App\Http\Controllers\LandingpageController;
+use App\Http\Controllers\VoteOptionsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,6 +26,8 @@ Route::get('/', LandingpageController::class)->name('login')->middleware('guest'
 Route::post('login', LoginController::class);
 
 Route::post('polls', CreatePollController::class);
+
+Route::post('vote-options', VoteOptionsController::class);
 
 Route::get('dashboard', DashboardController::class)->middleware('auth');
 
