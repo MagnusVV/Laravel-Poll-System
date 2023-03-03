@@ -37,6 +37,7 @@
 
 @include('errors')
 
+{{-- MV: Shows success-message from RegistrationController, if registration successful. --}}
 @if(session()->has('message'))
     <div class="alert alert-success">
         {{ session()->get('message') }}
@@ -54,7 +55,7 @@
     <form action="/vote" method="post">
         @csrf
         <label for="first-option">Option 1: </label>
-        <input type="text" id="first-option" value={{"1"}} readonly>
+        <input type="text" id="first-option" value="1" readonly>
         <button type="submit" name="first-option">Vote!</button>
     </form>
 

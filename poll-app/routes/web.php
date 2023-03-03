@@ -21,7 +21,7 @@ use App\Http\Controllers\VoteOptionsController;
 |
 */
 
-Route::get('/', LandingpageController::class)->name('login')->middleware('guest');
+Route::get('/', [LandingpageController::class, 'pollinfo'])->name('login')->middleware('guest');
 
 Route::post('login', LoginController::class);
 
