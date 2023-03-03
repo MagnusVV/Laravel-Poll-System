@@ -24,6 +24,12 @@
         <label for="no_of_allowed_votes">Number Of Allowed Votes</label>
         <input type="number" name="no_of_allowed_votes" required>
     </div>
+    <div>
+        <label for="vote_option_1">Vote Option 1</label>
+        <input type="text" name="vote_option_1" required>
+        <label for="vote_option_2">Vote Option 2</label>
+        <input type="text" name="vote_option_2" required>
+    </div>
     <button type="submit">Add Poll</button>
 </form>
 
@@ -36,16 +42,6 @@
             <p><b>Poll Description:</b> {{$poll->poll_description}}</p>
             <p><b>Date Closing:</b> {{$poll->date_closing}}</p>
             <p><b>Number Of Allowed Votes: </b>{{$poll->no_of_allowed_votes}}</p>
-            <form action="/vote-options" method="post">
-
-                @csrf
-
-                <label for="vote_option_1">Vote Option 1</label>
-                <input type="text" name="vote_option_1" required>
-                <label for="vote_option_2">Vote Option 2</label>
-                <input type="text" name="vote_option_2" required>
-                <button type="submit">Submit Options</button>
-            </form>
             <form action="polls/{{$poll->id}}/closed" method="post">
 
                 @csrf
