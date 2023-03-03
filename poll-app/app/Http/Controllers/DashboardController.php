@@ -2,8 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Poll;
-use App\Models\User;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -16,6 +14,6 @@ class DashboardController extends Controller
      */
     public function __invoke(Request $request)
     {
-        return view('dashboard', ['user' => $request->user()], ['polls' => Poll::all(), 'users' => User::all(['id', 'user_name'])]);
+        return view('dashboard', ['user' => $request->user()]);
     }
 }
