@@ -9,7 +9,7 @@
     </div>
     <div>
         <label for="password">Password</label>
-        <input name="password" id="password" type="password" />
+        <input name="password" id="password-login" type="password" />
     </div>
     <button type="submit">Login</button>
 </form>
@@ -30,7 +30,7 @@
     </div>
     <div>
         <label for="password">Password</label>
-        <input name="password" id="password" type="password" />
+        <input name="password" id="password-register" type="password" />
     </div>
     <button type="submit">Submit</button>
 </form>
@@ -43,6 +43,10 @@
         {{ session()->get('message') }}
     </div>
 @endif
+
+@foreach($vote_options as $option)
+<?php echo $option->poll_id ?> </br>
+@endforeach
 
 @foreach ($polls as $poll)
 @if (!$poll->poll_closed)

@@ -17,17 +17,29 @@ class LandingpageController extends Controller
      */
     public function pollinfo()
     {
-        return view('index', ['polls' => Poll::all(), 'users' => User::all(['id', 'user_name']), 'vote_options' => VoteOption::all(['poll_id', 'vote_option_1', 'vote_option_2'])]);
+        function voteOptions()
+        {
+            $pollsVoteOptionsJoined = DB::table('polls')
+                ->join('vote_options', 'polls.id', '=', 'vote_options.poll_id')->select('poll_id', 'vote_option_1', 'vote_option_2')->get();
+
+            return $pollsVoteOptionsJoined;
+        };
+
+        $voteOptions = voteOptions();
+
+        return view('index', ['polls' => Poll::all(), 'users' => User::all(['id', 'user_name']), 'vote_options' => $voteOptions]);
     }
 
-    public function voteOptions()
-    {
-        $pollsVoteOptionsJoined = DB::table('polls')
-            ->join('vote_options', 'polls.id', '=', 'vote_options.poll_id')->select('vote_options.poll_id', 'vote_option_1', 'vote_option_2')->get();
+    // public function voteOptions()
+    // {
+    //     $pollsVoteOptionsJoined = DB::table('polls')
+    //         ->join('vote_options', 'polls.id', '=', 'vote_options.poll_id')->select('vote_options.poll_id', 'vote_option_1', 'vote_option_2')->get();
 
-        return view('index', $pollsVoteOptionsJoined);
-    }
+    //     return view('index', $pollsVoteOptionsJoined);
+    // }
 }
 
 
 // {{$vote_options->where($vote_options->poll_id, '=' , $poll->id)->vote_option_1}}
+
+// VoteOption::all(['poll_id', 'vote_option_1', 'vote_option_2'])
