@@ -44,14 +44,11 @@
     </div>
 @endif
 
-@foreach($vote_options as $option)
-<?php echo $option->poll_id ?> </br>
-@endforeach
 
 @foreach ($polls as $poll)
 @if (!$poll->poll_closed)
     <h1>{{$poll->poll_title}}</h1>
-    <p><b>Created By: {{$users->find($poll->user_id)->user_name}}</b></p>
+    <p><b>Created By: {{$poll->user_name}}</b></p>
     <p><b>Poll Description:</b> {{$poll->poll_description}}</p>
     <p><b>Date Closing:</b> {{$poll->date_closing}}</p>
     <p><b>Number Of Allowed Votes: </b>{{$poll->no_of_allowed_votes}}</p>
@@ -59,14 +56,14 @@
     <form action="/vote" method="post">
         @csrf
         <label for="first-option">Option 1: </label>
-        <input type="text" id="first-option" value="1" readonly>
+        <input type="text" id="first-option" value="{{$poll->vote_option_1}}" readonly>
         <button type="submit" name="first-option">Vote!</button>
     </form>
 
     <form action="/vote" method="post">
         @csrf
         <label for="second-option">Option 2: </label>
-        <input type="text" id="first-option" value="2" readonly>
+        <input type="text" id="first-option" value="{{$poll->vote_option_2}}" readonly>
         <button type="submit" name="first-option">Vote!</button>
     </form>
 @endif

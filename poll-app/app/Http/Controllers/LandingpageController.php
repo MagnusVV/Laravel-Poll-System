@@ -2,9 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Poll;
-use App\Models\User;
-use App\Models\VoteOption;
 use Illuminate\Support\Facades\DB;
 
 class LandingpageController extends Controller
@@ -17,29 +14,11 @@ class LandingpageController extends Controller
      */
     public function pollinfo()
     {
-        function voteOptions()
-        {
-            $pollsVoteOptionsJoined = DB::table('polls')
-                ->join('vote_options', 'polls.id', '=', 'vote_options.poll_id')->select('poll_id', 'vote_option_1', 'vote_option_2')->get();
+        $poll = DB::table('polls')
+            ->join('vote_options', 'polls.id', '=', 'vote_options.poll_id')
+            ->join('users', 'polls.user_id', '=', 'users.id')
+            ->select('*')->get();
 
-            return $pollsVoteOptionsJoined;
-        };
-
-        $voteOptions = voteOptions();
-
-        return view('index', ['polls' => Poll::all(), 'users' => User::all(['id', 'user_name']), 'vote_options' => $voteOptions]);
+        return view('index', ['polls' => $poll]);
     }
-
-    // public function voteOptions()
-    // {
-    //     $pollsVoteOptionsJoined = DB::table('polls')
-    //         ->join('vote_options', 'polls.id', '=', 'vote_options.poll_id')->select('vote_options.poll_id', 'vote_option_1', 'vote_option_2')->get();
-
-    //     return view('index', $pollsVoteOptionsJoined);
-    // }
 }
-
-
-// {{$vote_options->where($vote_options->poll_id, '=' , $poll->id)->vote_option_1}}
-
-// VoteOption::all(['poll_id', 'vote_option_1', 'vote_option_2'])
