@@ -8,6 +8,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\RegistrationController;
 use App\Http\Controllers\LandingpageController;
+use App\Http\Controllers\VoteController;
 use App\Http\Controllers\VoteOptionsController;
 
 /*
@@ -36,3 +37,5 @@ Route::get('logout', LogoutController::class);
 Route::post('add-user', RegistrationController::class);
 
 Route::patch('polls/{poll}/closed', ClosePollController::class)->middleware('auth');
+
+Route::post('vote', [VoteController::class, 'showVotePage']);
