@@ -1,6 +1,7 @@
-<pre>
-<p>{{$voteOption}}</p>
-</pre>
+
+<p>{{$voteOption['poll-id']}}</p>
+<p>{{$voteOption['vote-option-name']}}</p>
+
 
 <form action="/vote-completed" method="post">
     @csrf

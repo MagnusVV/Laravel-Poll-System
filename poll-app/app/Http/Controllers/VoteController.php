@@ -9,6 +9,8 @@ class VoteController extends Controller
     function showVotePage(Request $request)
     {
 
-        return view('/vote', ['voteOption' => $request]);
+        $voteOption = $request->only("vote-option-name", "poll-id");
+
+        return view('/vote', ['voteOption' => $voteOption]);
     }
 }
