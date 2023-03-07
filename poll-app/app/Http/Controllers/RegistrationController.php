@@ -16,7 +16,6 @@ class RegistrationController extends Controller
     public function __invoke(Request $request)
     {
         $this->validate($request, ['user_name', 'email', 'password']);
-
         $newUser = $request->only('user_name', 'email', 'password');
 
         if (User::where('email', '=', $newUser['email'])->exists()) {

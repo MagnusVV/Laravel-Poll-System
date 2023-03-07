@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('votes', function (Blueprint $table) {
             $table->id();
             $table->foreignId('poll_id')->constrained('polls');
-            $table->string('email')->unique();
-            $table->integer('vote_option_choosen');
+            $table->string('email');
+            $table->string('vote_option_chosen');
             $table->timestamps();
         });
     }

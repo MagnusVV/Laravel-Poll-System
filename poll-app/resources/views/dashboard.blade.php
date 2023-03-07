@@ -37,7 +37,7 @@
 
     @foreach ($user->polls as $poll)
         @if (!$poll->poll_closed)
-            <h1>{{$poll->poll_title}}</h1>
+            <h2>{{$poll->poll_title}}</h2>
             <p><b>Created By: {{$user->user_name}}</b></p>
             <p><b>Poll Description:</b> {{$poll->poll_description}}</p>
             <p><b>Date Closing:</b> {{$poll->date_closing}}</p>

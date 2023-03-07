@@ -5,7 +5,7 @@
 
     <div>
         <label for="email">Email</label>
-        <input name="email" id="email" type="email" />
+        <input name="email" type="email" />
     </div>
     <div>
         <label for="password">Password</label>
@@ -26,7 +26,7 @@
     </div>
     <div>
         <label for="email">Email</label>
-        <input name="email" id="email" type="email" />
+        <input name="email" type="email" />
     </div>
     <div>
         <label for="password">Password</label>
@@ -38,6 +38,7 @@
 @include('errors')
 
 {{-- MV: Shows success-message from RegistrationController, if registration successful. --}}
+{{-- MV: Shows success-message from VoteController, if voting successful. --}}
 @if(session()->has('message'))
     <div class="alert alert-success">
         {{ session()->get('message') }}
@@ -47,7 +48,7 @@
 
 @foreach ($polls as $poll)
 @if (!$poll->poll_closed)
-    <h1>{{$poll->poll_title}}</h1>
+    <h2>{{$poll->poll_title}}</h2>
     <p><b>Created By: {{$poll->user_name}}</b></p>
     <p><b>Poll Description:</b> {{$poll->poll_description}}</p>
     <p><b>Date Closing:</b> {{$poll->date_closing}}</p>
@@ -56,16 +57,16 @@
     <form action="/vote" method="post">
         @csrf
         <label for="first-option">Option 1: {{$poll->vote_option_1}}</label>
-        <input type="text" name="poll-id" value="{{$poll->poll_id}}" readonly hidden>
-        <input type="text" name="vote-option-name" value="{{$poll->vote_option_1}}" readonly hidden>
+        <input type="number" name="poll_id" value="{{$poll->poll_id}}" readonly hidden>
+        <input type="text" name="vote_option_chosen" value="{{$poll->vote_option_1}}" readonly hidden>
         <button type="submit">Vote!</button>
     </form>
 
     <form action="/vote" method="post">
         @csrf
         <label for="second-option">Option 2: {{$poll->vote_option_2}}</label>
-        <input type="text" name="poll-id" value="{{$poll->poll_id}}" readonly hidden>
-        <input type="text" name="vote-option-name" value="{{$poll->vote_option_2}}" readonly hidden>
+        <input type="number" name="poll_id" value="{{$poll->poll_id}}" readonly hidden>
+        <input type="text" name="vote_option_chosen" value="{{$poll->vote_option_2}}" readonly hidden>
         <button type="submit">Vote!</button>
     </form>
 @endif
