@@ -56,7 +56,7 @@
     <form action="/vote" method="post">
         @csrf
         <label for="first-option">Option 1: {{$poll->vote_option_1}}</label>
-        <input type="text" name="poll-id" value="{{$poll->id}}" readonly hidden>
+        <input type="text" name="poll-id" value="{{$poll->poll_id}}" readonly hidden>
         <input type="text" name="vote-option-name" value="{{$poll->vote_option_1}}" readonly hidden>
         <button type="submit">Vote!</button>
     </form>
@@ -64,7 +64,7 @@
     <form action="/vote" method="post">
         @csrf
         <label for="second-option">Option 2: {{$poll->vote_option_2}}</label>
-        <input type="text" name="poll-id" value="{{$poll->id}}" readonly hidden>
+        <input type="text" name="poll-id" value="{{$poll->poll_id}}" readonly hidden>
         <input type="text" name="vote-option-name" value="{{$poll->vote_option_2}}" readonly hidden>
         <button type="submit">Vote!</button>
     </form>

@@ -38,4 +38,4 @@ Route::post('add-user', RegistrationController::class);
 
 Route::patch('polls/{poll}/closed', ClosePollController::class)->middleware('auth');
 
-Route::post('vote', [VoteController::class, 'showVotePage']);
+Route::post('vote', [VoteController::class, 'catchVote']);
