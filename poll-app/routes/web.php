@@ -10,6 +10,7 @@ use App\Http\Controllers\RegistrationController;
 use App\Http\Controllers\LandingpageController;
 use App\Http\Controllers\VoteController;
 use App\Http\Controllers\VoteOptionsController;
+use App\Http\Middleware\CheckPollDate;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,7 +23,7 @@ use App\Http\Controllers\VoteOptionsController;
 |
 */
 
-Route::get('/', [LandingpageController::class, 'pollinfo'])->name('login')->middleware('guest');
+Route::get('/', [LandingpageController::class, 'pollinfo'])->name('login')->middleware('guest', 'CheckPollDate');
 
 Route::post('login', LoginController::class);
 

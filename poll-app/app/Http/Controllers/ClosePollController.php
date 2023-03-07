@@ -15,6 +15,6 @@ class ClosePollController extends Controller
     {
         $poll->poll_closed = true;
         $poll->save();
-        return Redirect::to('dashboard');
+        return redirect('dashboard');
     }
 }

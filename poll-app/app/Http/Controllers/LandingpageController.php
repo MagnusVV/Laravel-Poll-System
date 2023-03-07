@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Poll;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
 
 class LandingpageController extends Controller
@@ -12,8 +14,10 @@ class LandingpageController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
     public function pollinfo()
     {
+
         $polls = DB::table('polls')
             ->join('vote_options', 'polls.id', '=', 'vote_options.poll_id')
             ->join('users', 'polls.user_id', '=', 'users.id')

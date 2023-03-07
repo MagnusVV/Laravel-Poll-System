@@ -18,7 +18,7 @@
     </div>
     <div>
         <label for="date_closing">Poll Closing Date</label>
-        <input type="date" name="date_closing" required>
+        <input type="date" name="date_closing" min="<?= date("Y-m-d") ?>" required>
     </div>
     <div>
         <label for="no_of_allowed_votes">Number Of Allowed Votes</label>
