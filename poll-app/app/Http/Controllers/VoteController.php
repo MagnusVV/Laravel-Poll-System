@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class VoteController extends Controller
 {
-    function showVotePage(Request $request)
+    function catchVote(Request $request)
     {
 
         $voteOption = $request->only("vote-option-name", "poll-id");
