@@ -26,4 +26,11 @@ class Poll extends Model
     {
         return $this->hasMany(Votes::class);
     }
+
+    public function countVotes($poll, $vote_option)
+    {
+        $countVotes = $poll->votes->where('vote_option_chosen', '=', $poll->voteOptions->first()->$vote_option)->count();
+
+        return $countVotes;
+    }
 }
