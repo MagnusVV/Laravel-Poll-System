@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Symfony\Component\HttpFoundation\Response;
 
-class CheckPollVotes
+class CheckTotalPollVotes
 {
     /**
      * Handle an incoming request.

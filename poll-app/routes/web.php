@@ -23,7 +23,7 @@ use App\Http\Middleware\CheckPollDate;
 |
 */
 
-Route::get('/', [LandingpageController::class, 'pollinfo'])->name('login')->middleware('guest', 'checkPollDate', 'checkPollVotes');
+Route::get('/', [LandingpageController::class, 'pollinfo'])->name('login')->middleware('guest', 'checkPollDate', 'checkTotalPollVotes');
 
 Route::post('login', LoginController::class);
 
