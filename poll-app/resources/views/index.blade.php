@@ -1,41 +1,12 @@
-<h2>Login here</h2>
-<form method="post" action="/login">
-
-    @csrf
-
-    <div>
-        <label for="email">Email</label>
-        <input name="email" type="email" />
-    </div>
-    <div>
-        <label for="password">Password</label>
-        <input name="password" id="password-login" type="password" />
-    </div>
-    <button type="submit">Login</button>
-</form>
-
-
-<h2>Add new user</h2>
-<form method="post" action="/add-user">
-
-    @csrf
-
-    <div>
-        <label for="user_name">Select username</label>
-        <input name="user_name" id="user_name" type="text" />
-    </div>
-    <div>
-        <label for="email">Email</label>
-        <input name="email" type="email" />
-    </div>
-    <div>
-        <label for="password">Password</label>
-        <input name="password" id="password-register" type="password" />
-    </div>
-    <button type="submit">Submit</button>
-</form>
-
-@include('errors')
+<header>
+<h1>Poll system™ v13.457</h1>
+<nav><a href="/active-polls">Active</a>
+<nav><a href="/closed-polls">Closed</a>
+<nav><a href="/login-user">Login</a>
+<nav><a href="/register-user">Register</a>
+</nav>
+</header>
+<main>
 
 {{-- MV: Shows success-message from RegistrationController, if registration successful. --}}
 {{-- MV: Shows success-message from VoteController, if voting successful. --}}
@@ -72,3 +43,6 @@
     </form>
 @endif
 @endforeach
+
+</main>
+<footer></footer>

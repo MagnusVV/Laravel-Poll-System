@@ -22,7 +22,7 @@ use App\Http\Controllers\VoteOptionsController;
 |
 */
 
-Route::get('/', [LandingpageController::class, 'pollinfo'])->name('login')->middleware('guest', 'checkPollDate', 'checkTotalPollVotes');
+Route::get('/', [LandingpageController::class, 'pollinfo'])->middleware('guest', 'checkPollDate', 'checkTotalPollVotes');
 
 Route::post('login', LoginController::class);
 
@@ -42,3 +42,8 @@ Route::patch('polls/{poll}/closed', ClosePollController::class)->middleware('aut
 
 Route::post('vote', [VoteController::class, 'catchVote']);
 Route::post('vote-cast', [VoteController::class, 'storeCastedVote']);
+
+Route::view('/active-polls', '/active-polls');
+Route::view('/closed-polls', '/closed-polls');
+Route::view('/login-user', '/login-user');
+Route::view('/register-user', '/register-user');

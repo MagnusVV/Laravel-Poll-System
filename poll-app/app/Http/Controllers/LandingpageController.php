@@ -18,6 +18,7 @@ class LandingpageController extends Controller
     public function pollinfo()
     {
 
+        // MV: This will be used to print out the open polls on the voting page.
         $polls = DB::table('polls')
             ->join('vote_options', 'polls.id', '=', 'vote_options.poll_id')
             ->join('users', 'polls.user_id', '=', 'users.id')

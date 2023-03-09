@@ -20,12 +20,12 @@ class RegistrationController extends Controller
 
         if (User::where('email', '=', $newUser['email'])->exists()) {
 
-            return back()->withErrors("A user with that email already exists. Please try again");
+            return redirect('/')->withErrors("A user with that email already exists. Please try again");
         } else {
 
             User::create(['user_name' => $newUser['user_name'], 'email' => $newUser['email'], 'password' => Hash::make($newUser['password'])]);
 
-            return back()->with('message', 'User registered succesfully!');
+            return redirect('/')->with('message', 'User registered succesfully!');
         }
     }
 }
