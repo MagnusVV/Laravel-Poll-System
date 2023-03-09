@@ -48,8 +48,8 @@
             {{-- MV: Counts no. of total votes on this poll instance. It actually counts the returned number of rows where polls.id and votes.poll_id matches: --}}
             <p>Current votes total: {{$poll->votes->count()}}</p>
             {{-- MV: Checking if logic makes the the correct id-matching: --}}
-            <p>Poll id from votes: {{$poll->votes->first()->poll_id}}</p>
-            <p>Original poll id: {{$poll->id}}</p>
+            {{-- <p>Poll id from votes: {{$poll->votes->first()->poll_id}}</p>
+            <p>Original poll id: {{$poll->id}}</p> --}}
 
             <form action="polls/{{$poll->id}}/closed" method="post">
 
