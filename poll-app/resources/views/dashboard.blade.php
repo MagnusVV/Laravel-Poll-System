@@ -44,6 +44,13 @@
             <p><b>Number Of Allowed Votes: </b>{{$poll->no_of_allowed_votes}}</p>
             <p><b>Vote Option 1: </b>{{$poll->voteOptions->first()->vote_option_1}}<br>Current no. of votes: {{$poll->countVotes($poll, 'vote_option_1')}}</p>
             <p><b>Vote Option 2: </b>{{$poll->voteOptions->first()->vote_option_2}}<br>Current no. of votes: {{$poll->countVotes($poll, 'vote_option_2')}}</p>
+
+            {{-- MV: Counts no. of total votes on this poll instance. It actually counts the returned number of rows where polls.id and votes.poll_id matches: --}}
+            <p>Current votes total: {{$poll->votes->count()}}</p>
+            {{-- MV: Checking if logic makes the the correct id-matching: --}}
+            <p>Poll id from votes: {{$poll->votes->first()->poll_id}}</p>
+            <p>Original poll id: {{$poll->id}}</p>
+
             <form action="polls/{{$poll->id}}/closed" method="post">
 
                 @csrf
@@ -56,3 +63,4 @@
 </div>
 
 @include('errors')
+

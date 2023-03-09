@@ -27,7 +27,7 @@ class Poll extends Model
         return $this->hasMany(Votes::class);
     }
 
-    //MV: This function summarises total votes cast for specified option.
+    //MV: This function summarises total votes cast for specified vote alternative.
     public function countVotes($poll, $vote_option)
     {
         $countVotes = $poll->votes->where('vote_option_chosen', '=', $poll->voteOptions->first()->$vote_option)->count();
