@@ -10,7 +10,6 @@ use App\Http\Controllers\RegistrationController;
 use App\Http\Controllers\LandingpageController;
 use App\Http\Controllers\VoteController;
 use App\Http\Controllers\VoteOptionsController;
-use App\Http\Middleware\CheckPollDate;
 
 /*
 |--------------------------------------------------------------------------

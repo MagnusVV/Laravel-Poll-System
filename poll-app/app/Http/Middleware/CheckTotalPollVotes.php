@@ -28,12 +28,3 @@ class CheckTotalPollVotes
         return $next($request);
     }
 }
-
-// <p>Poll id from votes: {{$poll->votes->first()->poll_id}}</p>
-// <p>Original poll id: {{$poll->id}}</p>
-
-
-// use App\Models\Poll;
-
-// $polls = Poll::all();
-// die(var_dump($polls));
