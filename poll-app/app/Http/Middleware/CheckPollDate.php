@@ -2,6 +2,7 @@
 
 namespace App\Http\Middleware;
 
+use App\Models\Poll;
 use Carbon\Carbon;
 use Closure;
 use Illuminate\Http\Request;
@@ -20,9 +21,14 @@ class CheckPollDate
 
         $dateToday = Carbon::now();
 
-        DB::table('polls')
-            ->where('date_closing', '<', $dateToday)
-            ->update(['poll_closed' => 1]);
+        $activePolls = Poll::where('poll_closed', false)->get();
+
+        foreach ($activePolls as $activePoll) {
+            if ($activePoll->date_closing < $dateToday) {
+                $activePoll->poll_closed = true;
+                $activePoll->save();
+            }
+        }
 
         return $next($request);
     }
