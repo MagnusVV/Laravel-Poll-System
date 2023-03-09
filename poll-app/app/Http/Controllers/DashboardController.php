@@ -2,8 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Poll;
-use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -14,9 +12,14 @@ class DashboardController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function __invoke(Request $request)
+    public function showDashboard(Request $request)
     {
 
         return view('dashboard', ['user' => $request->user()]);
+    }
+
+    public function showCompletedPolls(Request $request)
+    {
+        return view('dashboard-completed-polls', ['user' => $request->user()]);
     }
 }

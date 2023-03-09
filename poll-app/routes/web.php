@@ -30,7 +30,9 @@ Route::post('polls', CreatePollController::class);
 
 Route::post('vote-options', VoteOptionsController::class);
 
-Route::get('dashboard', DashboardController::class)->middleware('auth');
+Route::get('dashboard', [DashboardController::class, 'showDashboard'])->middleware('auth');
+
+Route::get('dashboard-completed-polls', [DashboardController::class, 'showCompletedPolls'])->middleware('auth');
 
 Route::get('logout', LogoutController::class);
 
