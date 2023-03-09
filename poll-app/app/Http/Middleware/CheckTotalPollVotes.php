@@ -3,10 +3,8 @@
 namespace App\Http\Middleware;
 
 use App\Models\Poll;
-use App\Models\Votes;
 use Closure;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use Symfony\Component\HttpFoundation\Response;
 
 class CheckTotalPollVotes
@@ -18,7 +16,14 @@ class CheckTotalPollVotes
      */
     public function handle(Request $request, Closure $next): Response
     {
-        $activePolls = Poll::where('poll_closed', 0);
+        $activePolls = Poll::where('poll_closed', false)->get();
+
+        foreach ($activePolls as $activePoll) {
+            if ($activePoll->no_of_allowed_votes <= $activePoll->votes->count()) {
+                $activePoll->poll_closed = true;
+                $activePoll->save();
+            }
+        }
 
         return $next($request);
     }
