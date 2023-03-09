@@ -1,7 +1,7 @@
 <header>
 <h1>Poll system™ v13.457</h1>
-<nav><a href="/active-polls">Active</a>
-<nav><a href="/closed-polls">Closed</a>
+<nav><a href="/active-polls">All active polls</a>
+<nav><a href="/closed-polls">Completed polls</a>
 <nav><a href="/login-user">Login</a>
 <nav><a href="/register-user">Register</a>
 </nav>
@@ -43,6 +43,8 @@
     </form>
 @endif
 @endforeach
+
+@include('errors')
 
 </main>
 <footer></footer>
