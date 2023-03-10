@@ -38,7 +38,9 @@ Route::get('logout', LogoutController::class);
 
 Route::post('add-user', RegistrationController::class);
 
-Route::patch('polls/{poll}/closed', ClosePollController::class)->middleware('auth');
+Route::patch('polls/{poll}/closed', [ClosePollController::class, 'closePoll'])->middleware('auth');
+
+Route::delete('poll/{poll}/removed', [ClosePollController::class, 'removePoll'])->middleware('auth');
 
 Route::post('vote', [VoteController::class, 'catchVote']);
 Route::post('vote-cast', [VoteController::class, 'storeCastedVote']);

@@ -14,7 +14,6 @@ class DashboardController extends Controller
      */
     public function showDashboard(Request $request)
     {
-
         return view('dashboard', ['user' => $request->user()]);
     }
 

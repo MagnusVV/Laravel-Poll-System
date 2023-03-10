@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('votes', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('poll_id')->constrained('polls');
+            $table->foreignId('poll_id')->constrained('polls')->onDelete('cascade');
             $table->string('email');
             $table->string('vote_option_chosen');
             $table->timestamps();

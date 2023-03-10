@@ -24,6 +24,13 @@
             @else
             <p>Winner: Its a tie!</p>
             @endif
+            <form action="/poll/{{$poll->id}}/removed" method="post">
+
+                @csrf
+                @method('DELETE')
+
+                <button type="submit">Remove Poll</button>
+            </form>
         @endif
     @endforeach
 </div>
