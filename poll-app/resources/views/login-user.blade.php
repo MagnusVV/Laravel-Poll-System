@@ -1,4 +1,4 @@
-<h2>Login here</h2>
+<h2>Login to your account</h2>
 <form method="post" action="/login">
 
     @csrf
@@ -13,5 +13,7 @@
     </div>
     <button type="submit">Login</button>
 </form>
+
+<a href="/">Back</a>
 
 @include('errors')

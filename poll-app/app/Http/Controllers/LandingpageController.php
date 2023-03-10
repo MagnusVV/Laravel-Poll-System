@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Poll;
-use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
 
 class LandingpageController extends Controller
@@ -18,11 +17,11 @@ class LandingpageController extends Controller
     public function pollinfoIndexpage()
     {
 
-        // MV: This will be used to print out the open polls on the INDEX page.
+        // MV: This will be used to print out 2-3 open polls on the INDEX page.
         $polls = DB::table('polls')
             ->join('vote_options', 'polls.id', '=', 'vote_options.poll_id')
             ->join('users', 'polls.user_id', '=', 'users.id')
-            ->select('*')->get();
+            ->select('*')->inRandomOrder()->limit(3)->get();
 
         return view('index', ['polls' => $polls]);
     }

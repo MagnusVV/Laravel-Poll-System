@@ -1,7 +1,9 @@
 <header>
-
+    <h1>Active polls</h1>
 </header>
 <main>
+
+    <a href="/">Back</a>
 
     @foreach ($polls as $poll)
     @if (!$poll->poll_closed)
@@ -27,6 +29,8 @@
         </form>
     @endif
     @endforeach
+
+    <a href="/">Back</a>
 
 </main>
 <footer>

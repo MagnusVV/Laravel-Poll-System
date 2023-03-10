@@ -1,4 +1,4 @@
-<h2>Add new user</h2>
+<h2>Register new account</h2>
 <form method="post" action="/add-user">
 
     @csrf
@@ -17,5 +17,7 @@
     </div>
     <button type="submit">Submit</button>
 </form>
+
+<a href="/">Back</a>
 
 @include('errors')

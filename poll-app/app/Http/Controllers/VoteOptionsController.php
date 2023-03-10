@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Poll;
 use App\Models\VoteOption;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Redirect;
 
 class VoteOptionsController extends Controller
 {

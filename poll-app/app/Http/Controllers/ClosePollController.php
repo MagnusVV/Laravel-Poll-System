@@ -3,8 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Poll;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Redirect;
 
 class ClosePollController extends Controller
 {

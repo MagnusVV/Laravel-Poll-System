@@ -43,6 +43,7 @@ Route::patch('polls/{poll}/closed', ClosePollController::class)->middleware('aut
 Route::post('vote', [VoteController::class, 'catchVote']);
 Route::post('vote-cast', [VoteController::class, 'storeCastedVote']);
 
+// Routes for the navbar on Index page
 Route::get('/active-polls', [LandingpageController::class, 'activePollinfo']);
 Route::get('/closed-polls', [LandingpageController::class, 'closedPollinfo']);
 Route::view('/login-user', '/login-user');
