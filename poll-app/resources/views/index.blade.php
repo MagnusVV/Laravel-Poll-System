@@ -2,7 +2,7 @@
     <h1>Poll system™ v13.457</h1>
     <nav>
     <a href="/active-polls">Active polls</a>
-    <a href="/closed-polls">Completed polls</a>
+    <a href="/closed-polls">Poll results</a>
     <a href="/login-user">Login</a>
     <a href="/register-user">Register</a>
     </nav>
