@@ -1,4 +1,4 @@
-<p>You have chosen the option "{{$voteOption['vote_option_chosen']}}." <br>Please submit your email below to cast your vote.</p>
+<p>You have chosen the option <b>{{$voteOption['vote_option_chosen']}}</b>. <br>Please submit your email below to cast your vote.</p>
 
 
 <form action="/vote-cast" method="post">
@@ -10,5 +10,5 @@
     <button type="submit">Send!</button>
 </form>
 
-{{-- This will fire if the same email is submitted more than once. --}}
+{{-- This will fire if the same email is submitted more than once for the same poll. --}}
 @include('errors')

@@ -25,10 +25,9 @@ class VoteController extends Controller
             ['poll_id', '=', $vote['poll_id'],]
         ];
 
-        // if (Votes::where('email', '=', $vote['email'])->exists() && Votes::where('poll_id', '=', $vote['poll_id'])->exists()) {
         if (Votes::where($whereOptions)->exists()) {
 
-            return redirect('/')->withErrors("A vote from {$vote['email']} has already been cast on this poll. Please retype email if it's wrong, or perhaps try another poll?");
+            return redirect('/')->withErrors("A vote from {$vote['email']} has already been cast on this poll. Please retype email if it was misspelled, or perhaps try another poll?");
         } else {
             Votes::create(['poll_id' => $vote['poll_id'], 'email' => $vote['email'], 'vote_option_chosen' => $vote['vote_option_chosen']]);
 

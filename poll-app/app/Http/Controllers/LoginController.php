@@ -22,7 +22,7 @@ class LoginController extends Controller
 
             return Redirect::to('dashboard');
         } else {
-            return back()->withErrors("We are deeply sorry, but something went wrong. Please try again");
+            return back()->withErrors("We are deeply sorry, but something went wrong. Please try again.");
         }
     }
 }

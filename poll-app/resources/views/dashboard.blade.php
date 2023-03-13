@@ -1,9 +1,11 @@
-<p>Pfssshhhhh ... POLLSYSTEM ACTIVATED!</p>
+<p>Pfssshhhhh ... POLLSYSTEM ACTIVATED!<br>
+Welcome {{$user->user_name}}!</p>
 
 <a href="/logout">Log out {{$user->user_name}}</a>
 
 <a href="/dashboard-completed-polls">View Completed Polls</a>
 
+<br></br>
 <br></br>
 
 <form method="post" action="/polls">
