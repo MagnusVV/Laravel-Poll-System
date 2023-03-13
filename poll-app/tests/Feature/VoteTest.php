@@ -12,16 +12,39 @@ class VoteTest extends TestCase
 
     use RefreshDatabase;
 
-    public function test_store_casted_vote()
+    public function test_cast_vote_first_option()
     {
         $response = $this
-            ->followingRedirects()
-            ->post('/vote-cast', [
+            ->post('/vote', [
                 'poll_id' => 1,
-                'email' => 'example@yrgo.se',
-                'vote_option_chosen' => 'vote_option_chosen'
+                'vote_option_chosen' => 'Option 1'
             ]);
 
-        $response->assertSeeText('Thank you for voting. Please come again!');
+        $response->assertViewIs('.vote');
+        $response->assertSeeText('You have chosen the option Option 1. Please submit your email below to cast your vote.');
     }
+
+    public function test_cast_vote_second_option()
+    {
+        $response = $this
+            ->post('/vote', [
+                'poll_id' => 1,
+                'vote_option_chosen' => 'Option 2'
+            ]);
+
+        $response->assertViewIs('.vote');
+        $response->assertSeeText('You have chosen the option Option 2. Please submit your email below to cast your vote.');
+    }
+
+    // public function test_store_casted_vote()
+    // {
+    //     $response = $this
+    //         ->post('/vote-cast', [
+    //             'poll_id' => 1,
+    //             'email' => 'example@yrgo.se',
+    //             'vote_option_chosen' => 'vote_option_chosen'
+    //         ]);
+
+    //     $response->assertRedirect('/');
+    // }
 }

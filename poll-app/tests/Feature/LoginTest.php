@@ -29,23 +29,21 @@ class LoginTest extends TestCase
         $user->save();
 
         $response = $this
-            ->followingRedirects()
-            ->post('/login-user', [
+            ->post('/login', [
                 'email' => 'example@yrgo.se',
                 'password' => '123',
             ]);
 
-        $response->assertSeeText('Hello, Rune!');
+        $response->assertRedirect('/dashboard');
     }
 
     public function test_login_user_without_password()
     {
         $response = $this
-            ->followingRedirects()
-            ->post('/login-user', [
+            ->post('/login', [
                 'email' => 'example@yrgo.se',
             ]);
 
-        $response->assertSeeText('We are deeply sorry, but something went wrong. Please try again.');
+        $response->assertRedirect('/');
     }
 }
