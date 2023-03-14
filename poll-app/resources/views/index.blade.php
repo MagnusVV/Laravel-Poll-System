@@ -24,8 +24,6 @@
     <p><b>Created By: {{$poll->user_name}}</b></p>
     <p><b>Poll Description:</b> {{$poll->poll_description}}</p>
     <p><b>Poll Closing:</b> {{$poll->date_closing}}</p>
-    {{-- MV: Below code not needed for this view? --}}
-    {{-- <p><b>Number Of Allowed Votes: </b>{{$poll->no_of_allowed_votes}}</p> --}}
 
     <form action="/vote" method="post">
         @csrf

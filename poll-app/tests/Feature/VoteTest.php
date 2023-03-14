@@ -6,6 +6,7 @@ namespace Tests\Feature;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
+use App\Models\Poll;
 
 class VoteTest extends TestCase
 {
@@ -32,21 +33,23 @@ class VoteTest extends TestCase
                 'vote_option_chosen' => 'Option 2'
             ]);
 
-        // WTF!!!
-        // $response->assertViewIs('.vote');
         $response->assertStatus(200);
         $response->assertSeeText('You have chosen the option Option 2. Please submit your email below to cast your vote.');
     }
 
-    // public function test_store_casted_vote()
-    // {
-    //     $response = $this
-    //         ->post('/vote-cast', [
-    //             'poll_id' => 1,
-    //             'email' => 'example@yrgo.se',
-    //             'vote_option_chosen' => 'vote_option_chosen'
-    //         ]);
+    public function test_store_casted_vote()
+    {
+        $poll = Poll::factory()->create();
 
-    //     $response->assertStatus(200);
-    // }
+        $response = $this
+            ->post('/vote-cast', [
+                'poll_id' => $poll->id,
+                'email' => 'example@yrgo.se',
+                'vote_option_chosen' => 'vote_option_chosen'
+            ]);
+
+        $this->assertDatabaseHas('votes', ['vote_option_chosen' => 'vote_option_chosen']);
+        $response->assertStatus(302);
+        $response->assertRedirect('/');
+    }
 }

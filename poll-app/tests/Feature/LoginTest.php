@@ -20,6 +20,26 @@ class LoginTest extends TestCase
         $response->assertStatus(200);
     }
 
+    public function test_view_registration_form()
+    {
+        $response = $this->get('/register-user');
+        $response->assertSeeText('Select username');
+        $response->assertStatus(200);
+    }
+
+    public function test_registrate_user()
+    {
+        $response = $this
+            ->post('/add-user', [
+                'user_name' => 'Kent',
+                'email' => 'example@yrgo.se',
+                'password' => '123',
+            ]);
+
+        $this->assertDatabaseHas('users', ['user_name' => 'Kent']);
+        $response->assertRedirect('/');
+    }
+
     public function test_login_user()
     {
         $user = new User();
