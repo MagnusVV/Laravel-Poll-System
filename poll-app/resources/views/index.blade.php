@@ -1,12 +1,11 @@
-<header>
-    <h1>Poll system™ v13.457</h1>
+@include('header')
+
     <nav>
-    <a href="/active-polls">Active polls</a>
-    <a href="/closed-polls">Poll results</a>
-    <a href="/login-user">Login</a>
-    <a href="/register-user">Register</a>
+        <a href="/active-polls">Active polls</a>
+        <a href="/closed-polls">Poll results</a>
+        <a href="/login-user">Login</a>
+        <a href="/register-user">Register</a>
     </nav>
-</header>
 <main>
 
 {{-- MV: Shows success-message from RegistrationController, if registration successful. --}}
@@ -17,7 +16,7 @@
     </div>
 @endif
 
-{{-- MV: Loops out the registered active polls: --}}
+{{-- MV: Loops out the registered active polls (2-3 open polls according to limit set in LanfingpageController): --}}
 @foreach ($polls as $poll)
 @if (!$poll->poll_closed)
     <h2>{{$poll->poll_title}}</h2>

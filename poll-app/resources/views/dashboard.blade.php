@@ -1,3 +1,5 @@
+@include('header')
+
 <p>Pfssshhhhh ... POLLSYSTEM ACTIVATED!<br>
 Welcome {{$user->user_name}}!</p>
 

@@ -1,3 +1,5 @@
+@include('header')
+
 <h2>Login to your account</h2>
 <form method="post" action="/login">
 

@@ -16,6 +16,7 @@ class RegistrationController extends Controller
         $this->validate($request, ['user_name', 'email', 'password']);
         $newUser = $request->only('user_name', 'email', 'password');
 
+        // MV: Checks if email already exists in database.
         if (User::where('email', '=', $newUser['email'])->exists()) {
 
             return redirect('/')->withErrors("A user with that email already exists. Please try again");

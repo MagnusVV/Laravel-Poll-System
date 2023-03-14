@@ -1,3 +1,5 @@
+@include('header')
+
 <p>You have chosen the option <b>{{$voteOption['vote_option_chosen']}}</b>. <br>Please submit your email below to cast your vote.</p>
 
 {{-- MV: This form catches the vote option choosen from the previous page. Email needs to be submitted to finalise the vote. --}}

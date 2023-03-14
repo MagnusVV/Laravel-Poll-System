@@ -1,3 +1,5 @@
+@include('header')
+
 <p>Pfssshhhhh ... COMPLETED POLLS!</p>
 
 <a href="/dashboard">Back To Dashboard</a>

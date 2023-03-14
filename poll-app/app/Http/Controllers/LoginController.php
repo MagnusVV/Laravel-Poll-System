@@ -18,6 +18,7 @@ class LoginController extends Controller
     {
         $credentials = $request->only(['email', 'password']);
 
+        // MV: Email and password are checked against the database. Authenticated users are taken to the dashboard view.
         if (Auth::attempt($credentials)) {
 
             return Redirect::to('dashboard');
