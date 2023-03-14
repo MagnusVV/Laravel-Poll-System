@@ -5,9 +5,7 @@ namespace Tests\Feature;
 use App\Models\Poll;
 use Tests\TestCase;
 use App\Models\User;
-use Illuminate\Support\Facades\Hash;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Support\Facades\Auth;
 
 class PollTest extends TestCase
 {
@@ -16,11 +14,7 @@ class PollTest extends TestCase
 
     public function test_create_poll(): void
     {
-        $user = new User();
-        $user->user_name = 'Rune';
-        $user->email = 'example@yrgo.se';
-        $user->password = Hash::make('123');
-        $user->save();
+        $user = User::factory()->create();
 
         $this->actingAs($user);
 
@@ -29,7 +23,7 @@ class PollTest extends TestCase
                 'poll_title' => 'Test Poll',
                 'poll_description' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto, non.',
                 'date_closing' => '2023-05-05',
-                'user_id' => Auth::id(),
+                'user_id' => $user->id,
                 'no_of_allowed_votes' => 10,
                 'vote_option_1' => 'First option',
                 'vote_option_2' => 'Second option'
@@ -40,31 +34,30 @@ class PollTest extends TestCase
 
     public function test_close_poll(): void
     {
-        // $user = new User();
-        // $user->user_name = 'Rune';
-        // $user->email = 'example@yrgo.se';
-        // $user->password = Hash::make('123');
-        // $user->save();
-
-        // $this->actingAs($user);
-
-        // $poll = new Poll();
-        // $poll->poll_title = 'Test Poll';
-        // $poll->poll_description = 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto, non.';
-        // $poll->date_closing = '2023-05-05';
-        // $poll->no_of_allowed_votes = 10;
-        // $poll->user_id = Auth::id();
-        // $poll->poll_closed = false;
-        // $poll->save();
-
+        $user = User::factory()->create();
         $poll = Poll::factory()->create();
+
+        $this->actingAs($user);
 
         $response = $this
             ->patch("/polls/{$poll->id}/closed");
 
-        // $this->assertTrue($poll->poll_closed);
-        // $response->assertRedirect('/dashboard');
-        // $response->assertRedirect('/dashboard');
-        $response->assertStatus(200);
+        $response->assertRedirect('/dashboard');
+        $response->assertStatus(302);
+        $this->assertTrue($poll->poll_closed = true);
+    }
+
+    public function test_remove_poll(): void
+    {
+        $user = User::factory()->create();
+        $poll = Poll::factory()->create();
+
+        $this->actingAs($user);
+
+        $response = $this
+            ->delete("/poll/{$poll->id}/removed");
+
+        $response->assertRedirect('/dashboard-completed-polls');
+        $this->assertModelMissing($poll);
     }
 }
