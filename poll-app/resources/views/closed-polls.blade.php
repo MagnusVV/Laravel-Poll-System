@@ -1,8 +1,8 @@
 @include('header')
 
-    <h2>Poll results</h2>
-
 <main>
+
+    <h2>Poll results</h2>
 
     <a href="/">Back</a>
 
@@ -33,8 +33,7 @@
     <a href="/">Back</a>
 
 </main>
-<footer>
-
-</footer>
 
 @include('errors')
+
+@include('footer')

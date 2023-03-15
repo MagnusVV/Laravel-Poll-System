@@ -14,3 +14,5 @@
 
 {{-- This will fire if the same email is submitted more than once for the same poll. --}}
 @include('errors')
+
+@include('footer')

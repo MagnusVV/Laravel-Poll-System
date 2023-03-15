@@ -1,5 +1,7 @@
 @include('header')
 
+<main>
+
 <h2>Login to your account</h2>
 <form method="post" action="/login">
 
@@ -18,4 +20,8 @@
 
 <a href="/">Back</a>
 
+</main>
+
 @include('errors')
+
+@include('footer')

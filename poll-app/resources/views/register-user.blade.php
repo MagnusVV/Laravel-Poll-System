@@ -1,5 +1,7 @@
 @include('header')
 
+<main>
+
 <h2>Register new account</h2>
 <form method="post" action="/add-user">
 
@@ -22,4 +24,8 @@
 
 <a href="/">Back</a>
 
+</main>
+
 @include('errors')
+
+@include('footer')

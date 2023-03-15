@@ -46,4 +46,4 @@
 @include('errors')
 
 </main>
-<footer></footer>
+@include('footer')
