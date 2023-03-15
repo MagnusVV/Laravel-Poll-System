@@ -1,5 +1,9 @@
 @include('header')
 
+<nav>
+    <a href="/">Home</a>
+</nav>
+
 <main>
 
     <h2>Active polls</h1>

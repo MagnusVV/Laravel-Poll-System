@@ -1,4 +1,5 @@
 <link rel="stylesheet" type="text/css" href="{{ URL::to('css/global.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ URL::to('css/style.css') }}">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

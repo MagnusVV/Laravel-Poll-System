@@ -1,12 +1,13 @@
 @include('header')
 
+<nav>
+    <a href="/active-polls">Active polls</a>
+    <a href="/closed-polls">Poll results</a>
+    <a href="/login-user">Login</a>
+    <a href="/register-user">Register</a>
+</nav>
+
 <main>
-    <nav>
-        <a href="/active-polls">Active polls</a>
-        <a href="/closed-polls">Poll results</a>
-        <a href="/login-user">Login</a>
-        <a href="/register-user">Register</a>
-    </nav>
 
 {{-- MV: Shows success-message from RegistrationController, if registration successful. --}}
 {{-- MV: Shows success-message from VoteController, if voting successful. --}}
