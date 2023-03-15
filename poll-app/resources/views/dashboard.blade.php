@@ -15,7 +15,7 @@
     <p >Pfssshhhhh ... POLLSYSTEM ACTIVATED!</p>
 <section class="create_poll_section">
 
-    <form method="post" action="/polls" class="create_poll_form">
+    <form method="post" action="/polls">
 
         <h2>Create New Poll</h2>
 

@@ -1,3 +1,5 @@
+<link rel="stylesheet" type="text/css" href="{{ URL::to('css/poll.css') }}">
+
 @include('header')
 
 <nav>

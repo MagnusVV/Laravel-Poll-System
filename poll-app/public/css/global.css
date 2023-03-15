@@ -37,6 +37,25 @@ main {
     flex-grow: 1;
 }
 
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+form div {
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    border: 0.8px solid black;
+    border-radius: 6px;
+    font-family: Nunito;
+}
+
 footer {
     padding: 2rem;
     width: 100%;
