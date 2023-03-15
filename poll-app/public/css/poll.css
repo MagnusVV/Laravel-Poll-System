@@ -1,3 +1,33 @@
+/* Create poll form */
+
+.create_poll_form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+}
+
+.create_poll_form input {
+    border: 0.8px solid black;
+    border-radius: 100px;
+}
+
+button {
+    border-radius: 10px;
+    border: none;
+    background-color: var(--top-bottom-color);
+    color: white;
+    height: 30px;
+    font-family: Nunito;
+    transition: 0.2s linear;
+}
+
+button:hover {
+    cursor: pointer;
+    scale: 0.98;
+}
+
 /* Poll Section */
 
 .poll_section {
@@ -8,11 +38,7 @@
 }
 
 .poll_card {
-    border: 1px solid;
     padding: 20px;
-}
-
-.poll_title {
-    font-size: 24px;
-    font-weight: bold;
+    border-radius: 5%;
+    box-shadow: rgba(202, 11, 11, 0.456) 0px 8px 24px;
 }
