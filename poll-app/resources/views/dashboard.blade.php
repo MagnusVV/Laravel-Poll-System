@@ -9,7 +9,8 @@ Welcome {{$user->user_name}}!</p>
 
 <a href="/dashboard-completed-polls">View Completed Polls</a>
 
-<form method="post" action="/polls">
+<main>
+<form method="post" action="/polls" class="create_poll_form">
 
     @csrf
 
@@ -32,6 +33,8 @@ Welcome {{$user->user_name}}!</p>
     <div>
         <label for="vote_option_1">Vote Option 1</label>
         <input type="text" name="vote_option_1" required>
+    </div>
+    <div>
         <label for="vote_option_2">Vote Option 2</label>
         <input type="text" name="vote_option_2" required>
     </div>
@@ -42,7 +45,7 @@ Welcome {{$user->user_name}}!</p>
     @foreach ($user->polls as $poll)
         @if (!$poll->poll_closed)
         <article class="poll_card">
-            <p class="poll_title">{{$poll->poll_title}}</p>
+            <h2>{{$poll->poll_title}}</h2>
             <p><b>Created By:</b> {{$user->user_name}}</p>
             <p><b>Poll Description:</b> {{$poll->poll_description}}</p>
             <p><b>Date Closing:</b> {{$poll->date_closing}}</p>
@@ -64,6 +67,8 @@ Welcome {{$user->user_name}}!</p>
         </article>
         @endif
     @endforeach
+</main>
+<footer></footer>
 
 @include('errors')
 
