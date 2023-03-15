@@ -1,19 +1,57 @@
-/* Create poll form */
+/* Create Poll Section */
+
+.create_poll_section {
+    margin-bottom: 100px;
+}
 
 .create_poll_form {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 2px;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.create_poll_form div {
+    display: flex;
+    flex-direction: column;
 }
 
 .create_poll_form input {
     border: 0.8px solid black;
-    border-radius: 100px;
+    border-radius: 6px;
+    font-family: Nunito;
 }
 
-button {
+.create_poll_form button {
+    border-radius: 10px;
+    border: none;
+    background-color: var(--top-bottom-color);
+    color: white;
+    height: 30px;
+    width: 200px;
+    font-family: Nunito;
+    transition: 0.2s linear;
+}
+
+/* Poll Section */
+
+.poll_section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.poll_cards_container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px;
+}
+
+.poll_section button {
     border-radius: 10px;
     border: none;
     background-color: var(--top-bottom-color);
@@ -23,18 +61,9 @@ button {
     transition: 0.2s linear;
 }
 
-button:hover {
+.poll_section button:hover {
     cursor: pointer;
     scale: 0.98;
-}
-
-/* Poll Section */
-
-.poll_section {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 50px;
 }
 
 .poll_card {
