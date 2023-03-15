@@ -11,6 +11,10 @@
 
 body {
     font-family: "Nunito";
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 h1 {
@@ -23,6 +27,20 @@ header {
     padding: 2rem;
     width: 100%;
     height: 10%;
-    background-color: rgb(202, 11, 11);
+    background-color: var(--top-bottom-color);
+    color: white;
+}
+
+main {
+    padding: 2rem;
+    width: auto;
+    flex-grow: 1;
+}
+
+footer {
+    padding: 2rem;
+    width: 100%;
+    height: 5%;
+    background-color: var(--top-bottom-color);
     color: white;
 }
