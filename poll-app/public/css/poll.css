@@ -32,6 +32,8 @@
 
 .poll_card {
     padding: 20px;
+    overflow-wrap: break-word;
+    width: 320px;
     border-radius: 5%;
     box-shadow: rgba(202, 11, 11, 0.456) 0px 8px 24px;
 }
