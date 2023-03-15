@@ -7,13 +7,12 @@
 </nav>
 
 <main>
-
-    <h2>Poll results</h2>
-
+    
     <a href="/">Back</a>
 
     {{-- MV: This loops out all the closed polls. --}}
     <section class="poll_section">
+        <h2>Poll results</h2>
         <div class="poll_cards_container">
         @foreach ($polls as $poll)
         <article class="poll_card">

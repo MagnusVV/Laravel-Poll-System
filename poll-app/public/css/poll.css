@@ -56,5 +56,10 @@
 /* Increases height of description field */
 
 .poll-description {
-    height: 200px;
+    resize: none;
+    border: 0.8px solid black;
+    border-radius: 6px;
+    font-family: Nunito;
+    height: 100px;
+    width: 200px;
 }

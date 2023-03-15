@@ -8,10 +8,9 @@
 
 <main>
 
-    <h2>Active polls</h1>
-
     {{-- MV: This loops out all the active (open) polls. --}}
     <section class="poll_section">
+        <h2>Active polls</h2>
         <div class="poll_cards_container">
             @foreach ($polls as $poll)
             @if (!$poll->poll_closed)
