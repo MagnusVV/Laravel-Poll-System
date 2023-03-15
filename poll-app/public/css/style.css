@@ -1,8 +1,9 @@
 nav {
     width: 100%;
     min-height: 2rem;
-    padding: 0 1rem;
+    padding: 0 2rem;
     background-color: var(--accent-color);
+    color: white;
     display: flex;
     justify-content: flex-end;
     gap: 2rem;
@@ -11,4 +12,10 @@ nav {
 nav a {
     text-decoration: none;
     color: white;
+}
+
+.left-align-in-navbar {
+    display: flex;
+    gap: 2rem;
+    flex-grow: 1;
 }

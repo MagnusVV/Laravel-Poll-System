@@ -2,15 +2,19 @@
 
 @include('header')
 
-<p class="test">Pfssshhhhh ... POLLSYSTEM ACTIVATED!<br>
-Welcome {{$user->user_name}}!</p>
-
-<a href="/logout">Log out {{$user->user_name}}</a>
-
-<a href="/dashboard-completed-polls">View Completed Polls</a>
+<nav>
+    <div class="left-align-in-navbar">
+        <p>Welcome {{$user->user_name}}!</p>
+        <a href="/dashboard-completed-polls">View Completed Polls</a>
+    </div>
+    <a href="/logout">Log out</a>
+</nav>
 
 <main>
+
+    <p >Pfssshhhhh ... POLLSYSTEM ACTIVATED!</p>
 <section class="create_poll_section">
+
     <form method="post" action="/polls" class="create_poll_form">
 
         <h2>Create New Poll</h2>

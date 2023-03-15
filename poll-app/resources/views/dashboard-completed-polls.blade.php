@@ -1,9 +1,12 @@
 @include('header')
 
-<p>Pfssshhhhh ... COMPLETED POLLS!</p>
+<nav>
+    <a href="/dashboard">Back</a>
+    <a href="/logout">Log out {{$user->user_name}}</a>
+</nav>
 
-<a href="/dashboard">Back To Dashboard</a>
-<a href="/logout">Log out {{$user->user_name}}</a>
+<main>
+<p>Pfssshhhhh ... COMPLETED POLLS!</p>
 
 <div>
     @foreach ($user->polls as $poll)
@@ -37,4 +40,8 @@
     @endforeach
 </div>
 
+</main>
+
 @include('errors')
+
+@include('footer')
