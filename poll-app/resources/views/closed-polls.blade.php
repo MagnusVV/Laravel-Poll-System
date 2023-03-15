@@ -7,8 +7,6 @@
 </nav>
 
 <main>
-    
-    <a href="/">Back</a>
 
     {{-- MV: This loops out all the closed polls. --}}
     <section class="poll_section">
