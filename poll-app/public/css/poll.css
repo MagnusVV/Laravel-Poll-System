@@ -34,6 +34,8 @@
     padding: 20px;
     overflow-wrap: break-word;
     width: 320px;
+    display: flex;
+    flex-direction: column;
     border-radius: 5%;
     box-shadow: rgba(202, 11, 11, 0.456) 0px 8px 24px;
 }
@@ -46,7 +48,8 @@
 /* Vote Form */
 
 .vote_form {
-    display: block;
+    display: grid;
+    grid: 1fr 1fr / 1fr 1fr;
 }
 
 .vote_form button {

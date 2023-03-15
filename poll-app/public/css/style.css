@@ -29,11 +29,12 @@ button {
     height: 30px;
     font-family: Nunito;
     transition: 0.2s linear;
+    justify-self: flex-end;
 }
 
 button:hover {
     cursor: pointer;
-    scale: 0.98;
+    scale: 0.95;
 }
 
 .user-form {
