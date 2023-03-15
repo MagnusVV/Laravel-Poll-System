@@ -6,25 +6,29 @@
 
 <main>
 
-<h2>Register new account</h2>
-<form method="post" action="/add-user">
+    <section class="user-form">
 
-    @csrf
+        <h2>Register new account</h2>
+        <form method="post" action="/add-user">
 
-    <div>
-        <label for="user_name">Select username</label>
-        <input name="user_name" id="user_name" type="text" />
-    </div>
-    <div>
-        <label for="email">Email</label>
-        <input name="email" type="email" />
-    </div>
-    <div>
-        <label for="password">Password</label>
-        <input name="password" id="password-register" type="password" />
-    </div>
-    <button type="submit">Submit</button>
-</form>
+            @csrf
+
+            <div>
+                <label for="user_name">Select username</label>
+                <input name="user_name" id="user_name" type="text" required/>
+            </div>
+            <div>
+                <label for="email">Email</label>
+                <input name="email" type="email" required/>
+            </div>
+            <div>
+                <label for="password">Password</label>
+                <input name="password" id="password-register" type="password" required/>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+
+    </section>
 
 <a href="/">Back</a>
 

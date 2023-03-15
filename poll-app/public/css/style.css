@@ -19,3 +19,23 @@ nav a {
     gap: 2rem;
     flex-grow: 1;
 }
+
+/* All other buttons than poll-associated buttons */
+button {
+    border-radius: 10px;
+    border: none;
+    background-color: var(--userbutton-color);
+    color: white;
+    height: 30px;
+    font-family: Nunito;
+    transition: 0.2s linear;
+}
+
+button:hover {
+    cursor: pointer;
+    scale: 0.98;
+}
+
+.user-form {
+    margin: 0 0 2rem 0;
+}
