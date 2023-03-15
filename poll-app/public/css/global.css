@@ -1,3 +1,7 @@
+:root{
+    --top-bottom-color: rgb(202, 11, 11);
+}
+
 * {
     box-sizing: border-box;
     margin: 0;

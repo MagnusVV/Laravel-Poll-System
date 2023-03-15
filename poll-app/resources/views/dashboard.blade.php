@@ -1,3 +1,5 @@
+<link rel="stylesheet" type="text/css" href="{{ URL::to('css/poll.css') }}">
+
 @include('header')
 
 <p class="test">Pfssshhhhh ... POLLSYSTEM ACTIVATED!<br>
@@ -6,9 +8,6 @@ Welcome {{$user->user_name}}!</p>
 <a href="/logout">Log out {{$user->user_name}}</a>
 
 <a href="/dashboard-completed-polls">View Completed Polls</a>
-
-<br></br>
-<br></br>
 
 <form method="post" action="/polls">
 
@@ -39,12 +38,12 @@ Welcome {{$user->user_name}}!</p>
     <button type="submit">Add Poll</button>
 </form>
 
-<div>
-
+<section class="poll_section">
     @foreach ($user->polls as $poll)
         @if (!$poll->poll_closed)
-            <h2>{{$poll->poll_title}}</h2>
-            <p><b>Created By: {{$user->user_name}}</b></p>
+        <article class="poll_card">
+            <p class="poll_title">{{$poll->poll_title}}</p>
+            <p><b>Created By:</b> {{$user->user_name}}</p>
             <p><b>Poll Description:</b> {{$poll->poll_description}}</p>
             <p><b>Date Closing:</b> {{$poll->date_closing}}</p>
             <p><b>Number Of Allowed Votes: </b>{{$poll->no_of_allowed_votes}}</p>
@@ -62,9 +61,9 @@ Welcome {{$user->user_name}}!</p>
 
                 <button type="submit">Close Poll</button>
             </form>
+        </article>
         @endif
     @endforeach
-</div>
 
 @include('errors')
 

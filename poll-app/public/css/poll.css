@@ -1,0 +1,18 @@
+/* Poll Section */
+
+.poll_section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px;
+}
+
+.poll_card {
+    border: 1px solid;
+    padding: 20px;
+}
+
+.poll_title {
+    font-size: 24px;
+    font-weight: bold;
+}
