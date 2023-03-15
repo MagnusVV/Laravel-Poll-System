@@ -10,8 +10,6 @@
 
     <h2>Active polls</h1>
 
-    <a href="/">Back</a>
-
     {{-- MV: This loops out all the active (open) polls. --}}
     <section class="poll_section">
         <div class="poll_cards_container">

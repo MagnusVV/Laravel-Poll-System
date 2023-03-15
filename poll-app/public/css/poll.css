@@ -52,3 +52,9 @@
 .vote_form button {
     margin-top: 5px;
 }
+
+/* Increases height of description field */
+
+.poll-description {
+    height: 200px;
+}

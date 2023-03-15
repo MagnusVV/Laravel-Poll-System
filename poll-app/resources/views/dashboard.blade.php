@@ -27,7 +27,7 @@
         </div>
         <div>
             <label for="poll_description">Poll Description</label>
-            <input type="text" name="poll_description" required>
+            <textarea class="poll-description" type="text" name="poll_description" required></textarea>
         </div>
         <div>
             <label for="date_closing">Poll Closing Date</label>
