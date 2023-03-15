@@ -1,25 +1,3 @@
-/* Create Poll Section */
-
-.create_poll_section {
-    margin-bottom: 100px;
-}
-
-.create_poll_form button {
-    border-radius: 10px;
-    border: none;
-    background-color: var(--accent-color);
-    color: white;
-    height: 30px;
-    width: 200px;
-    font-family: Nunito;
-    transition: 0.2s linear;
-}
-
-.create_poll_form button:hover {
-    cursor: pointer;
-    scale: 0.98;
-}
-
 /* Poll Section */
 
 .poll_section {
@@ -60,4 +38,15 @@
 
 .poll_card p {
     margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/* Vote Form */
+
+.vote_form {
+    display: block;
+}
+
+.vote_form button {
+    margin-top: 5px;
 }

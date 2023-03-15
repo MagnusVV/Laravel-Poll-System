@@ -1,3 +1,5 @@
+<link rel="stylesheet" type="text/css" href="{{ URL::to('css/poll.css') }}">
+
 @include('header')
 
 <nav>
@@ -8,7 +10,7 @@
 <p>You have chosen the option <b>{{$voteOption['vote_option_chosen']}}</b>. <br>Please submit your email below to cast your vote.</p>
 
 {{-- MV: This form catches the vote option choosen from the previous page. Email needs to be submitted to finalise the vote. --}}
-<form action="/vote-cast" method="post">
+<form action="/vote-cast" method="post" class="vote_form">
     @csrf
     <label for="vote">Please input your e-mail address: </label>
     <input type="number" name="poll_id" value={{$voteOption['poll_id']}} readonly hidden>

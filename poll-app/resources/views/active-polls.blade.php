@@ -24,7 +24,7 @@
                 <p><b>Poll Closing:</b> {{$poll->date_closing}}</p>
 
          {{-- MV: Two forms for the different vote options are generated here: --}}
-                <form action="/vote" method="post">
+                <form action="/vote" method="post" class="vote_form">
                     @csrf
                     <label for="first-option">Option 1: {{$poll->vote_option_1}}</label>
                     <input type="number" name="poll_id" value="{{$poll->poll_id}}" readonly hidden>
@@ -32,7 +32,7 @@
                     <button type="submit">Vote!</button>
                 </form>
 
-                <form action="/vote" method="post">
+                <form action="/vote" method="post" class="vote_form">
                     @csrf
                     <label for="second-option">Option 2: {{$poll->vote_option_2}}</label>
                     <input type="number" name="poll_id" value="{{$poll->poll_id}}" readonly hidden>
