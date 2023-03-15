@@ -1,6 +1,6 @@
 @include('header')
 
-<p>Pfssshhhhh ... POLLSYSTEM ACTIVATED!<br>
+<p class="test">Pfssshhhhh ... POLLSYSTEM ACTIVATED!<br>
 Welcome {{$user->user_name}}!</p>
 
 <a href="/logout">Log out {{$user->user_name}}</a>
@@ -48,6 +48,7 @@ Welcome {{$user->user_name}}!</p>
             <p><b>Poll Description:</b> {{$poll->poll_description}}</p>
             <p><b>Date Closing:</b> {{$poll->date_closing}}</p>
             <p><b>Number Of Allowed Votes: </b>{{$poll->no_of_allowed_votes}}</p>
+            {{-- Retrieves the data from the column "vote_option_1" and "vote_option_1" trough the method "voteOptions" in Poll model. Gets the first value as to not get a collection. --}}
             <p><b>Vote Option 1: </b>{{$poll->voteOptions->first()->vote_option_1}}<br>Current no. of votes: {{$poll->countVotes($poll, 'vote_option_1')}}</p>
             <p><b>Vote Option 2: </b>{{$poll->voteOptions->first()->vote_option_2}}<br>Current no. of votes: {{$poll->countVotes($poll, 'vote_option_2')}}</p>
 
