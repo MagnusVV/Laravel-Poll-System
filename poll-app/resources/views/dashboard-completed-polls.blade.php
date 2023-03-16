@@ -32,7 +32,7 @@
             <p>Winner: {{$poll->voteOptions->first()->vote_option_2}}</p>
 
             @else
-            <p>Winner: Its a tie!</p>
+            <p>Winner: It's a tie!</p>
             @endif
             <form action="/poll/{{$poll->id}}/removed" method="post">
 

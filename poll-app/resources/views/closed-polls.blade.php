@@ -31,7 +31,7 @@
 
             {{-- MV: If both countVotes() above are equal, it's a tie --}}
             @else
-            <p>Winner:<b> Its a tie!</b></p>
+            <p>Winner:<b> It's a tie!</b></p>
         @endif
     </article>
     @endforeach
