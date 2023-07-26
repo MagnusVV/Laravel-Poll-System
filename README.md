@@ -8,7 +8,7 @@ A guest user can not create its own polls, but can vote on any poll, as long as 
 It's a shame we didn't have time to deploy it, since this project was so fun to make!
 
 ### Participants
-gustavenoksson, MagnusVV
+[gustavenoksson](https://github.com/gustavenoksson), MagnusVV
 
 # CODE REVIEW by team Hawaii
 
