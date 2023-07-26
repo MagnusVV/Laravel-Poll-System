@@ -1,6 +1,14 @@
 # Laravel-Poll-System
 A simple two-option system for setting up polls.
 
+## About
+This project was built in Laravel for handling the backend and with Blade for frontend. We were two students in each group, as we also were supposed to train a bit on pair-programming. The task was to create a system that could handle a bit more advanced queries against a MYSQL-database we also had to create. We decided to build a web-app that could handle registering of new users, login of said users, login error handling, and something that only registered users would be able to do. In this case, that would be to create "cards" with simple two-option-polls. The user can write poll descriptions, add maximum number of allowed votes before closing, assign the date for closing if not maximum number of votes had been achieved, and also remove or close any of their own created polls (but not other users' polls).
+A guest user can not create its own polls, but can vote on any poll, as long as it's still open and the guest has not voted on the same poll before. To vote, a user, or guest user, has to fill in an e-mail address before submitting its choice. If that address is already registered in that particular poll, the user can not cast a vote on that poll again. The user/guest user can also check the page for closed polls, where all poll results (and winning result, or draw) are shown.
+
+It's a shame we didn't have time to deploy it, since this project was so fun to make!
+
+### Participants
+gustavenoksson, MagnusVV
 
 # CODE REVIEW by team Hawaii
 
